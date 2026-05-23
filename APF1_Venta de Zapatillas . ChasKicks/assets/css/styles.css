@@ -1,0 +1,888 @@
+/* Declaración de variables CSS estrictas mediante :root */
+:root {
+    --color1: #000000; 
+    --color2: #454545; 
+    --color3: #FF5351; /* Color Primario de la marca */
+    --color4: #FFFFFF; 
+    --color5: #A4ACB3; 
+    --color6: #212129; 
+    --color7: #181921; 
+
+    /* Tipografías importadas de forma consistente */
+    --fuente1: 'Poppins', sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+    --spacing: 1.6;
+}
+
+/* --------------------------- */
+/* Selector universal de elementos */
+/* --------------------------- */
+
+* {
+    /* Elimina los espacios predeterminados */
+    margin: 0;
+    padding: 0;
+    /* Evita que un contenedor cambien de tamaño al agregar espacios */
+    box-sizing: borssder-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente1);
+    line-height: var(--spacing);
+    background-color: var(--color4);
+    color: var(--color7);
+}
+
+/* Estilos de encabezados globales */
+section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    line-height: 1;
+}
+
+img, video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    font-family: var(--fuente2);
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--color2);
+    margin-bottom: 20px;
+}
+
+/* Contenedor central estandarizado */
+.container {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   CABECERAS (HEADERS)
+   ========================================================================== */
+
+/* Header 1 - Barra superior */
+#header1 {
+    background-color: var(--color1);
+    color: var(--color5);
+    font-size: 15px;
+}
+
+#header1 a {
+    color: var(--color4);
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+#header1 a:hover {
+    color: var(--color3);
+}
+
+#header1 i {
+    color: var(--color3);
+}
+
+/* Header 2 - Navegación sticky */
+#header2 {
+    background-color: var(--color7);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color6);
+    font-size: 15px;
+}
+
+#header2 a {
+    color: var(--color4);
+    text-decoration: none;
+    transition: color 0.5s;
+    font-family: var(--fuente2);
+    font-weight: 600;
+}
+
+#header2 a:hover {
+    color: var(--color3);
+}
+
+#header2 a.active {
+    color: var(--color3);
+}
+
+/* Flexbox para cabeceras */
+.header-flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.header-left, .social-links, .menuop {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-logo {
+    width: 150px;
+    height: auto;
+}
+
+/* ==========================================================================
+   CLASES UTILITARIAS - MULTIMEDIA Y PADDINGS
+   ========================================================================== */
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-fluid {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* Clases de padding utilitarias */
+.padding-xs {
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+.padding-xl {
+    padding-top: 120px;
+    padding-bottom: 90px;
+}
+
+.padding-xl-negrozul {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: var(--color7);
+    color: var(--color5);
+}
+
+.padding-xl-secundario-blanco {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    background-color: var(--color4);
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE FILAS Y COLUMNAS (SISTEMA FLEXBOX)
+   ========================================================================== */
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ==========================================================================
+   INDEX - SECCIONES PRINCIPALES
+   ========================================================================== */
+
+/* Banner principal hero */
+#banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Quienes somos */
+#about {
+    background-color: var(--color4);
+    color: var(--color7);
+}
+
+#about p {
+    color: var(--color2);
+}
+
+/* Modelos TOP / Servicios */
+#services {
+    background-color: var(--color7);
+}
+
+#services h2 {
+    color: var(--color4);
+}
+
+/* Vision (pagina nosotros) */
+#vision {
+    background-color: var(--color4);
+    color: var(--color5);
+}
+
+#vision h2 {
+    color: var(--color1);
+}
+
+/* Calidad */
+#calidad {
+    background-color: var(--color7);
+    color: var(--color4);
+    text-align: center;
+}
+
+#calidad p {
+    color: var(--color5);
+}
+
+/* Multimedia / Videos */
+#multimedia {
+    background-color: var(--color7);
+}
+
+#multimedia h2 {
+    color: var(--color4);
+}
+
+/* ==========================================================================
+   INDEX - COMPONENTES: TARJETAS DE PRODUCTOS
+   ========================================================================== */
+
+.card-producto {
+    background-color: var(--color4);
+    padding: 25px;
+    border-radius: 4px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-producto img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card-producto img:hover {
+    transform: scale(0.97);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.18);
+}
+
+.card-producto h3 {
+    color: var(--color1);
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.card-producto p {
+    color: var(--color2);
+}
+
+/* Boton general de servicios */
+.services-button {
+    display: inline-block;
+    background-color: var(--color3);
+    color: var(--color4);
+    padding: 8px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--fuente2);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 28px;
+    border: 1px solid var(--color3);
+    transition: background-color 0.5s;
+    margin-top: 20px;
+}
+
+.services-button:hover {
+    background-color: var(--color1);
+}
+
+/* ==========================================================================
+   INDEX - COMPONENTES: GALERIA
+   ========================================================================== */
+
+.galeria-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.galeria-item {
+    flex: 1 1 calc(25% - 15px);
+    min-width: 200px;
+    overflow: hidden;
+    background-color: var(--color6);
+}
+
+.galeria-item img {
+    width: 100%;
+    transition: transform 1s;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.15);
+}
+
+/* ==========================================================================
+   INDEX - COMPONENTES: TABLA DE TALLAS
+   ========================================================================== */
+
+.tabla-responsiva-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tbl-tallas {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tbl-tallas caption {
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.1rem;
+    color: var(--color3);
+    margin-bottom: 15px;
+}
+
+.tbl-tallas th {
+    background-color: var(--color3);
+    color: var(--color4);
+    border: 1px solid var(--color6);
+    padding: 15px;
+}
+
+.tbl-tallas td {
+    border: 1px solid var(--color5);
+    padding: 12px;
+}
+
+.tbl-tallas tfoot td {
+    font-size: 0.85rem;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--color2);
+}
+
+/* ==========================================================================
+   INDEX - COMPONENTES: VIDEOS
+   ========================================================================== */
+
+.video-wrapper {
+    width: 100%;
+    position: relative;
+    background-color: #000;
+}
+
+.video-fluid {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   INDEX - COMPONENTES: FORMULARIO DE CONTACTO
+   ========================================================================== */
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font: inherit;
+    border: 1px solid var(--color5);
+    background-color: var(--color4);
+}
+
+.form-control:focus {
+    outline: 2px solid var(--color3);
+}
+
+.form-link {
+    color: var(--color3);
+    text-decoration: none;
+}
+
+.form-submit {
+    background-color: var(--color3);
+    color: var(--color4);
+    padding: 8px 20px;
+    border: 1px solid var(--color3);
+    font: inherit;
+    font-family: var(--fuente2);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 28px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.5s;
+}
+
+.form-submit:hover {
+    background-color: var(--color7);
+}
+
+/* ==========================================================================
+   INDEX - FOOTER
+   ========================================================================== */
+
+#footer {
+    background-color: var(--color6);
+    color: var(--color5);
+}
+
+.copy {
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-social-text a {
+    color: var(--color4);
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.footer-social-text i {
+    color: var(--color3);
+}
+
+/* ==========================================================================
+   BOTON SCROLL UP (TODAS LAS PAGINAS)
+   ========================================================================== */
+
+.scroll-up {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    background-color: var(--color3);
+    color: var(--color4);
+    border: 1px solid var(--color4);
+}
+
+/* ==========================================================================
+   PAGINAS INTERNAS - BANNER DE TITULO (page-title)
+   ========================================================================== */
+
+.page-title {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color4);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-image: url("../img/page_title.jpg");
+}
+
+.page-title::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.35));
+}
+
+.page-title-content {
+    position: relative;
+    z-index: 1;
+}
+
+.page-title-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.page-title-content p {
+    font-size: 1.1rem;
+    color: var(--color4);
+}
+
+/* ==========================================================================
+   REGISTRO - FORMULARIO DE AUTENTICACION (registro.html)
+   ========================================================================== */
+
+.auth-page {
+    background-color: var(--color4);
+}
+
+.auth-card {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 18px;
+    background-color: var(--color4);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(33, 33, 41, 0.08);
+}
+
+.auth-header h2 {
+    margin-bottom: 10px;
+    color: var(--color1);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.auth-header p {
+    margin-bottom: 30px;
+    color: var(--color2);
+    font-family: var(--fuente2);
+}
+
+.auth-card .input-group {
+    margin-bottom: 18px;
+}
+
+.auth-card .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--color1);
+    font-size: 0.95rem;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    padding-right: 44px;
+}
+
+.show-password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: var(--color5);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Botones de accion del formulario de registro */
+.auth-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.auth-primary {
+    background-color: var(--color3);
+    color: var(--color4);
+}
+
+.auth-secondary {
+    background-color: var(--color6);
+    color: var(--color4);
+}
+
+.auth-button:hover {
+    transform: translateY(-1px);
+}
+
+.auth-secondary i {
+    margin-right: 8px;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--color2);
+    font-size: 0.95rem;
+}
+
+.auth-footer a {
+    color: var(--color3);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   CATALOGO - FILTROS DE CATEGORIA (catalogo.html)
+   ========================================================================== */
+
+.cat-filtros-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.cat-tag {
+    display: inline-block;
+    padding: 8px 22px;
+    border: 2px solid var(--color5);
+    color: var(--color2);
+    font-family: var(--fuente2);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+
+.cat-tag:hover,
+.cat-tag-activo {
+    background-color: var(--color3);
+    border-color: var(--color3);
+    color: var(--color4);
+}
+
+/* ==========================================================================
+   CATALOGO - GRID DE PRODUCTOS (catalogo.html)
+   ========================================================================== */
+
+.cat-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.cat-card {
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 260px;
+    background-color: var(--color4);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.cat-img-wrapper {
+    overflow: hidden;
+}
+
+.cat-img-wrapper img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.cat-img-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+.cat-card-body {
+    padding: 20px 25px;
+}
+
+.cat-card-body h3 {
+    color: var(--color1);
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+}
+
+.cat-card-body p {
+    color: var(--color2);
+}
+
+/* ==========================================================================
+   CATALOGO - SECCION CTA FINAL (catalogo.html)
+   ========================================================================== */
+
+#cat-cta h2 {
+    color: var(--color4);
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.cat-cta-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.cat-cta-flex p {
+    color: var(--color5);
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   DROPS - GRID DE ENTRADAS (drops.html)
+   ========================================================================== */
+
+.drops-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.drop-card {
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 260px;
+    background-color: var(--color4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.drop-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.drop-img-wrapper {
+    overflow: hidden;
+}
+
+.drop-img-wrapper img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.drop-img-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+.drop-body {
+    padding: 20px 25px;
+}
+
+.drop-fecha {
+    font-size: 13px;
+    font-family: var(--fuente2);
+    color: var(--color3);
+    font-weight: 600;
+}
+
+.drop-fecha i {
+    margin-right: 5px;
+}
+
+.drop-body h3 {
+    color: var(--color1);
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.drop-body p {
+    color: var(--color2);
+}
+
+/* ==========================================================================
+   CONTACTO - DATOS DE CONTACTO (contacto.html)
+   ========================================================================== */
+
+.contacto-info {
+    background-color: var(--color7);
+    padding: 40px 30px;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.contacto-icono {
+    background-color: var(--color3);
+    color: var(--color4);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contacto-item h3 {
+    color: var(--color4);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.contacto-item p {
+    color: var(--color5);
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   CONTACTO - TITULOS DEL FORMULARIO (contacto.html)
+   ========================================================================== */
+
+.contacto-titulo {
+    text-align: left;
+    margin-bottom: 25px;
+    color: var(--color1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.contacto-titulo-claro {
+    text-align: left;
+    margin-bottom: 25px;
+    color: var(--color4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   CONTACTO - MAPA IFRAME (contacto.html)
+   ========================================================================== */
+
+.contacto-iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    display: block;
+}
