@@ -14,18 +14,12 @@
     --spacing: 1.6;
 }
 
-/* --------------------------- */
-/* Selector universal de elementos */
-/* --------------------------- */
-
-* {
-    /* Elimina los espacios predeterminados */
+/* Selector universal de reseteo */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    /* Evita que un contenedor cambien de tamaño al agregar espacios */
-    box-sizing: borssder-box;
+    box-sizing: border-box;
 }
-
 
 html {
     scroll-behavior: smooth;
@@ -554,6 +548,8 @@ p {
     margin-bottom: 10px;
     color: var(--color1);
     font-size: 2rem;
+    line-height: 1.2;
+    text-align: left;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
