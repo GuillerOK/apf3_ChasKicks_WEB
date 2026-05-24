@@ -61,7 +61,6 @@ Considerar el uso de flexbox en el header para mejorar la alineación del logo y
 
 
 
-
        
 ==============================================================================
 Vamos por el APF2 - Completado 100% (errores minimos de margenes quizas)
