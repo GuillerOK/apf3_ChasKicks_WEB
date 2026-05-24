@@ -70,3 +70,51 @@ Vamos por el APF2 - Completado 100% (errores minimos de margenes quizas)
 ==============================================================================
 
 FALTA REVISION 
+
+
+*Estructura y organización del contenido*
+El proyecto deberá incluir:
+• Página principal: index.html
+• Páginas internas enlazadas desde el menú de navegación.
+La página principal deberá contener como mínimo:
+• Header o cabecera.
+• Barra superior con datos de contacto y redes sociales.
+• Barra de navegación fija (sticky o fixed).
+• Logo enlazado a index.html.
+• Menú con mínimo cinco (5) enlaces funcionales.
+• Banner principal o hero section.
+• Sección de presentación.
+• Sección de servicios o productos.
+• Galería maquetada con Flexbox.
+• Tabla HTML responsiva con información relacionada al tema.
+• Formulario de contacto utilizando validaciones nativas HTML5.
+• Inserción de:
+       o Video MP4 (máx. 4 MB)
+       o Video de YouTube relacionado al tema.
+       o Footer con información de contacto y derechos reservados.
+• Las páginas internas deberán incluir:
+       o Imagen de fondo o banner de página.
+       o Nombre o título de la página.
+       o Diseño visual coherente con la página principal.
+
+
+
+*Diseño y Presentación Visual*
+• Debe utilizarse una hoja de estilos externa (styles.css).
+• Se deberá evidenciar el uso de variables CSS mediante :root.
+• Importar Google Fonts y FontAwesome.
+• Aplicar Flexbox en las principales áreas de contenido.
+• La interfaz debe mantener:
+       o coherencia visual,
+       o correcta alineación,
+       o espaciados apropiados,
+       o tipografías consistentes,
+       o paleta cromática organizada.
+• Las imágenes deberán:
+       o estar optimizadas para web,
+       o tener un tamaño máximo de 200 KB por imagen.
+• El video MP4:
+       o deberá tener un tamaño máximo de 4 MB,
+       o reproducirse automáticamente,
+       o estar en bucle,
+       o y no contener audio.
