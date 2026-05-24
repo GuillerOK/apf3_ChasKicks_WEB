@@ -11,19 +11,20 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- Enlazar el HTML con el favicon -->    
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- En lazar HTML con fuentes externas de Google Fonts -->
+    <!-- Enlazar HTML con fuentes externas de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Enlazar HTML con la lubreria de icono de font-awesome -->    
+    <!-- Enlazar HTML con la libreria de iconos de Font Awesome -->    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
 </head>
 <body>
 
+    <!-- Barra superior con telefono, horario y redes sociales -->
     <header id="header1">
         <div class="header-flexbox container padding-xs">
             <div class="header-left">
@@ -39,6 +40,7 @@
         </div>
     </header>
 
+    <!-- Navegacion principal con logo y menu de paginas -->
     <header id="header2">
         <div class="header-flexbox container">
             <div class="nav-logo">
@@ -60,10 +62,13 @@
     </header>
 
     <main>
+
+        <!-- Banner principal con imagen de portada -->
         <section id="banner">
             <img class="img-fluid" src="assets/img/banner_ck.png" alt="Banner Principal Retro Jordan">
         </section>
 
+        <!-- Quienes somos: descripcion del negocio -->
         <section id="about" class="padding-xl">
             <div class="container">
                 <h2>Quienes somos</h2>
@@ -72,10 +77,12 @@
             </div>
         </section>
 
+        <!-- Productos mas vendidos con tarjetas de cada modelo -->
         <section id="services" class="padding-xl-negrozul">
             <div class="container">
                 <h2>Lo más vendido</h2>
                 <div class="row">
+                    <!-- Tarjeta producto 1 -->
                     <div class="col">
                         <div class="card-producto">
                             <img class="img-fluid" src="assets/img/jordan4.png" alt="Nike Air Jordan 4">
@@ -84,6 +91,7 @@
                             <a class="services-button" href="#contact-form">Conoce mas</a>
                         </div>
                     </div>
+                    <!-- Tarjeta producto 2 -->
                     <div class="col">
                         <div class="card-producto">
                             <img class="img-fluid" src="assets/img/jordanblack.png" alt="Nike Air Jordan Retro 2">
@@ -92,6 +100,7 @@
                             <a class="services-button" href="#contact-form">Conoce mas</a>
                         </div>
                     </div>
+                    <!-- Tarjeta producto 3 -->
                     <div class="col">
                         <div class="card-producto">
                             <img class="img-fluid" src="assets/img/jordanblue.png" alt="Nike Air Jordan Retro 3">
@@ -104,6 +113,7 @@
             </div>
         </section>
 
+        <!-- Galeria de imagenes de modelos y estilos -->
         <section id="galeria" class="padding-xl">
             <div class="container">
                 <h2>Galeria Urbana</h2>
@@ -116,6 +126,7 @@
             </div>
         </section>
 
+        <!-- Seccion de texto sobre la calidad del producto -->
         <section id="calidad" class="padding-xl-secundario-blanco">
             <div class="container">
                 <h2>Nuestra calidad se nota...</h2>
@@ -124,6 +135,7 @@
             </div>
         </section>
 
+        <!-- Tabla de conversion de tallas internacional -->
         <section id="tallas" class="padding-xl-secundario-blanco">
             <div class="container">
                 <h2>Guia de Tallas Internacional</h2>
@@ -179,10 +191,12 @@
             </div>
         </section>
 
+        <!-- Videos: video propio y video de YouTube -->
         <section id="multimedia" class="padding-xl-negrozul">
             <div class="container">
                 <h2>Cultura Sneaker en Video</h2>
                 <div class="row">
+                    <!-- Video local del sitio -->
                     <div class="col">
                         <div class="video-wrapper">
                             <video class="video-fluid" muted autoplay loop playsinline>
@@ -191,6 +205,7 @@
                             </video>
                         </div>
                     </div>
+                    <!-- Video de YouTube -->
                     <div class="col">
                         <div class="video-wrapper">
                             <iframe class="video-fluid" src="https://www.youtube.com/embed/AMyN_wqZDM4" title="YouTube video player" style="border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -200,6 +215,7 @@
             </div>
         </section>
 
+        <!-- Formulario de contacto para consultas de clientes -->
         <section id="contact-form" class="padding-xl">
             <div class="container">
                 <h2>Consultanos</h2>
@@ -226,8 +242,10 @@
                 </form>
             </div>
         </section>
+
     </main>
 
+    <!-- Footer con copyright y enlaces a redes sociales -->
     <footer id="footer" class="padding-xs">
         <div class="copy container">
             <div class="footer-flexbox">
@@ -242,9 +260,11 @@
             </div>
         </div>
     </footer>
-    <!-- Boton scroll-up -->
-     <a class="scroll-up" href="#">
+
+    <!-- Boton flotante para volver al inicio de la pagina -->
+    <a class="scroll-up" href="#">
         <i class="fa-solid fa-angle-up"></i>
-     </a>    
+    </a>    
+
 </body>
 </html>
