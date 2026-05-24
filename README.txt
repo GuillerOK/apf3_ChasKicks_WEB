@@ -1,6 +1,9 @@
 PLANTILLA USADA PARA LA PAGINA WEB:
 https://demo.unitemplates.com/sombra/index.php/home-1
 
+LINK DE NUESTRA PAGINA CON HOST GITHUB:
+https://guillerok.github.io/ChasKicks-WEB/
+
 
 ==============================================================================
 APF1 - Completado 100% (paddgins generales mal y imagenes no optimizadas)
