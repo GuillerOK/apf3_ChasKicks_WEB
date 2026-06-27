@@ -69,52 +69,39 @@ Considerar el uso de flexbox en el header para mejorar la alineación del logo y
 Vamos por el APF2 - Completado 100% (errores minimos de margenes quizas)
 ==============================================================================
 
-FALTA REVISION 
+INFORME DE EVALUACION -- APF2
 
+Hola Grupo 10:
 
-*Estructura y organización del contenido*
-El proyecto deberá incluir:
-• Página principal: index.html
-• Páginas internas enlazadas desde el menú de navegación.
-La página principal deberá contener como mínimo:
-• Header o cabecera.
-• Barra superior con datos de contacto y redes sociales.
-• Barra de navegación fija (sticky o fixed).
-• Logo enlazado a index.html.
-• Menú con mínimo cinco (5) enlaces funcionales.
-• Banner principal o hero section.
-• Sección de presentación.
-• Sección de servicios o productos.
-• Galería maquetada con Flexbox.
-• Tabla HTML responsiva con información relacionada al tema.
-• Formulario de contacto utilizando validaciones nativas HTML5.
-• Inserción de:
-       o Video MP4 (máx. 4 MB)
-       o Video de YouTube relacionado al tema.
-       o Footer con información de contacto y derechos reservados.
-• Las páginas internas deberán incluir:
-       o Imagen de fondo o banner de página.
-       o Nombre o título de la página.
-       o Diseño visual coherente con la página principal.
+A continuacion te detallo las observaciones generales encontradas en su proyecto:
 
+Estructura y entrega: El nombre de la carpeta raiz "APF2_Venta de Zapatillas . ChasKicks" contiene espacios, lo cual infringe la restriccion de nomenclatura establecida (no se permiten espacios en nombres de archivos ni carpetas). De igual modo, el archivo de presentacion "APF2_Venta de Zapatillas . ChasKicks - Integrantes.pptx" contiene espacios y un guion en su nombre. El favicon (favicon.ico) pesa 171 KB, lo cual es excesivo para un icono de sitio; se recomienda optimizarlo. Existe una carpeta "assets/audio/" con un archivo "music.mp3" (2.6 MB) que no forma parte de los requerimientos del proyecto y no se referencia en ninguna pagina HTML.
 
+Pagina Principal e Internas: En la pagina principal (index.html) no se identifica un enlace funcional con protocolo "mailto:" para correo electronico; la seccion de contacto en contacto.html muestra la direccion "contacto@chaskicks.pe" como texto plano dentro de un parrafo, sin enlace funcional con "mailto:". El numero de telefono en la pagina de contacto (contacto.html, linea 87) tambien aparece como texto plano sin enlace "tel:". En la pagina registro.html, el enlace "terminos y condiciones" apunta a "index.html" (una ruta relativa incorrecta desde la carpeta pages/, deberia ser "../../index.html" o una pagina real de terminos), y el enlace "Inicia sesion" apunta a "index.html#contact-form" (misma ruta relativa incorrecta). En la pagina registro.html no se incluye el boton flotante de scroll-up, rompiendo la coherencia de diseno con las demas paginas.
 
-*Diseño y Presentación Visual*
-• Debe utilizarse una hoja de estilos externa (styles.css).
-• Se deberá evidenciar el uso de variables CSS mediante :root.
-• Importar Google Fonts y FontAwesome.
-• Aplicar Flexbox en las principales áreas de contenido.
-• La interfaz debe mantener:
-       o coherencia visual,
-       o correcta alineación,
-       o espaciados apropiados,
-       o tipografías consistentes,
-       o paleta cromática organizada.
-• Las imágenes deberán:
-       o estar optimizadas para web,
-       o tener un tamaño máximo de 200 KB por imagen.
-• El video MP4:
-       o deberá tener un tamaño máximo de 4 MB,
-       o reproducirse automáticamente,
-       o estar en bucle,
-       o y no contener audio.
+Estilos y Maquetacion: Sin observaciones negativas relevantes. El archivo styles.css es externo, declara variables en :root para colores, fuentes e interlineado, utiliza Flexbox ampliamente en todas las secciones principales (galeria, header, footer, grid de catalogo, drops), importa Google Fonts (Poppins y Open Sans) y FontAwesome correctamente en todas las paginas.
+
+Componentes y Multimedia: El formulario del index.html utiliza validaciones nativas de HTML5 (required, minlength, type="email", checkbox required). La tabla de tallas en index.html es responsiva mediante un contenedor con overflow-x: auto. El video MP4 local pesa 2.02 MB (cumple el limite de 4 MB) y cuenta con los atributos muted, autoplay, loop y playsinline. Se incluye un video de YouTube incrustado. Todas las imagenes en "assets/img/" estan por debajo de 200 KB (la mas pesada es modelo1.jpg con 192 KB). El iframe de Google Maps en contacto.html no utiliza la clase "contacto-iframe" definida en el CSS; en su lugar tiene dimensiones hardcodeadas con atributos width="600" y height="450", lo que podria afectar la adaptabilidad.
+
+Restricciones Tecnicas: No se detecta uso de JavaScript, jQuery, ni frameworks CSS (Bootstrap, Tailwind, etc.) en ninguna pagina. Sin embargo, la carpeta raiz y el archivo PPTX contienen espacios en sus nombres, lo cual incumple la regla de nomenclatura.
+
+Buenas practicas: La semantica HTML5 es correcta: se utilizan las etiquetas header, nav, main, section, footer, table (con thead, tbody, tfoot, caption), form con labels asociados a inputs mediante "for/id" en registro.html. La indentacion del codigo es consistente y se incluyen comentarios descriptivos en el HTML y CSS que facilitan la lectura. Sin embargo, algunos campos del formulario de contacto (index.html y contacto.html) carecen de etiquetas label visibles; se utilizan solo placeholders, lo cual reduce la accesibilidad.
+
+Evaluacion por criterios:
+
+Criterio 1: Estructura HTML y organizacion del contenido: HTML5 semantico correcto con uso de header, main, section, nav, footer. Seis paginas (index + 5 internas) correctamente enlazadas con navegacion funcional de 7 elementos. Cada pagina tiene title personalizado. Las paginas internas mantienen coherencia con banner de cabecera y titulo, excepto registro.html que omite el boton scroll-up. Los enlaces de correo electronico en contacto.html carecen del protocolo "mailto:", y el telefono en la seccion de datos de contacto no tiene enlace "tel:". Enlaces de redes sociales funcionan correctamente con target="_blank": 3 / 3 puntos.
+Criterio 2: Implementacion de estilos CSS: CSS externo unico (styles.css) de 887 lineas. Variables CSS en :root para 7 colores, 2 fuentes y 1 variable de spacing. Flexbox aplicado extensivamente en galeria, headers, footer, grid de catalogo, drops y formulario de contacto. Google Fonts (Poppins, Open Sans) y FontAwesome importados en todas las paginas. Estilos consistentes en todo el sitio: 3 / 3 puntos.
+Criterio 3: Diseno visual y fidelidad a la plantilla: Interfaz limpia con paleta de colores coherente (negro, blanco, rojo coral, gris). Alineaciones correctas, espaciados uniformes con clases utilitarias de padding. Tarjetas de productos con transiciones hover. Galeria con efecto zoom. Diseno de paginas internas mantiene identidad visual. El iframe de mapa no usa la clase CSS preparada, quedando con dimensiones fijas: 3 / 3 puntos.
+Criterio 4: Componentes funcionales y multimedia: Formulario de contacto con validaciones nativas HTML5 (required, minlength, type="email") presente en index.html y contacto.html. Tabla responsiva de tallas con caption, thead, tbody y tfoot. Video MP4 (2.02 MB) con atributos autoplay, muted, loop, playsinline. Video de YouTube incrustado. Favicon presente. Sin enlaces rotos en navegacion principal. Falta enlace mailto: funcional para correo electronico y enlace tel: en la pagina de contacto (datos de contacto): 3 / 4 puntos.
+Criterio 5: Organizacion del proyecto y cumplimiento tecnico: Estructura de carpetas correcta (assets/css, assets/img, assets/video, assets/pages). Imagenes optimizadas (todas por debajo de 200 KB). Video MP4 dentro del limite de 4 MB. Sin embargo, el nombre de la carpeta raiz y el archivo PPTX contienen espacios, incumpliendo la regla de nomenclatura en minusculas sin espacios ni caracteres especiales. Existe una carpeta "audio" no solicitada: 1 / 2 puntos.
+Criterio 6: Evaluación Oral del alumno: TORRES LAPA JUNIOR GUILLERMO - 5 puntos - El estudiante responde con total dominio y profundidad. Explica su código con claridad excepcional, аргumenta sus decisiones técnicas y demuestra comprensión integral (estructura, estilos, layout, buenas prácticas). Su comunicación es fluida, precisa y profesional.
+
+NOTA FINAL: 18 / 20
+
+Comentario final: La maquetacion del proyecto demuestra un dominio solido de Flexbox y una organizacion CSS bien estructurada con variables en :root, comentarios seccionales claros y clases utilitarias reutilizables. Para la entrega final, se recomienda corregir la nomenclatura de la carpeta raiz y el archivo PPTX eliminando espacios y caracteres especiales, implementar enlaces funcionales con protocolo "mailto:" para las direcciones de correo electronico y "tel:" para los numeros de telefono mostrados como texto plano en la pagina de contacto, agregar el boton scroll-up en registro.html para mantener la coherencia de diseno, aplicar la clase "contacto-iframe" al mapa de Google Maps, incorporar etiquetas label accesibles en los formularios del index y contacto en lugar de depender exclusivamente de placeholders, y eliminar la carpeta "audio" que no es parte de los requerimientos del proyecto.
+
+==============================================================================
+APF3 - Completado 100% (errores minimos quiza en linkear algunos datos)
+==============================================================================
+
+FALTA REVISION
