@@ -1,31 +1,47 @@
-/* Declaración de variables CSS estrictas mediante :root */
+/* ==========================================================================
+   VARIABLES CSS - :root define tokens globales reutilizables en todo el CSS.
+   Cambiar un valor aqui lo actualiza en todo el sitio automaticamente.
+   ========================================================================== */
 :root {
-    --color1: #000000; 
-    --color2: #454545; 
-    --color3: #FF5351; /* Color Primario de la marca */
-    --color4: #FFFFFF; 
-    --color5: #A4ACB3; 
-    --color6: #212129; 
-    --color7: #181921; 
+    --color1: #000000;                  /* Negro puro - textos principales */
+    --color2: #454545;                  /* Gris oscuro - textos secundarios */
+    --color3: #FF5351;                  /* Rojo coral - color primario de la marca */
+    --color4: #FFFFFF;                  /* Blanco - fondos claros y textos sobre oscuro */
+    --color5: #A4ACB3;                  /* Gris claro - textos sutiles, bordes */
+    --color6: #212129;                  /* Gris azulado oscuro - footer */
+    --color7: #181921;                  /* Negro azulado - header y secciones oscuras */
 
-    /* Tipografías importadas de forma consistente */
+    /* Tipografias: fuente1 para titulos, fuente2 para cuerpo y UI */
     --fuente1: 'Poppins', sans-serif;
     --fuente2: 'Open Sans', sans-serif;
+
+    /* Espaciado de linea global del sitio */
     --spacing: 1.6;
 }
 
-* {
-    /* Elimina los espacios predeterminados */
+/* ==========================================================================
+   RESET UNIVERSAL - Elimina margenes y paddings que los navegadores aplican
+   por defecto. box-sizing: border-box hace que padding y border NO aumenten
+   el tamaño declarado de un elemento, evitando desbordes inesperados.
+   ========================================================================== */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    /* Evita que un contenedor cambien de tamaño al agregar espacios */
     box-sizing: border-box;
 }
 
+/* ==========================================================================
+   HTML - scroll-behavior: smooth hace que los enlaces ancla (#seccion)
+   desplacen la pagina con animacion suave en lugar de saltar directamente.
+   ========================================================================== */
 html {
     scroll-behavior: smooth;
 }
 
+/* ==========================================================================
+   BODY - Estilos base heredados por todos los elementos de la pagina.
+   font-family, line-height, background-color y color se heredan en cascada.
+   ========================================================================== */
 body {
     font-family: var(--fuente1);
     line-height: var(--spacing);
@@ -33,7 +49,11 @@ body {
     color: var(--color7);
 }
 
-/* Estilos de encabezados globales */
+/* ==========================================================================
+   H2 GLOBALES - Todos los h2 dentro de section comparten este estilo base.
+   font-size fijo en px, text-transform uppercase y letter-spacing dan el
+   estilo de titular de marca. Se puede sobreescribir por seccion especifica.
+   ========================================================================== */
 section h2 {
     font-size: 36px;
     font-weight: 700;
@@ -44,12 +64,22 @@ section h2 {
     line-height: 1;
 }
 
+/* ==========================================================================
+   IMAGENES Y VIDEOS - display: block elimina el espacio inferior que los
+   navegadores agregan a elementos inline. max-width: 100% los hace fluidos
+   para que nunca desborden su contenedor padre.
+   ========================================================================== */
 img, video {
     display: block;
     max-width: 100%;
     height: auto;
 }
 
+/* ==========================================================================
+   PARRAFOS - Usan Open Sans para diferenciar visualmente el cuerpo de texto
+   de los titulos Poppins. font-size y line-height en px dan control exacto
+   del ritmo tipografico. margin-bottom separa parrafos consecutivos.
+   ========================================================================== */
 p {
     font-family: var(--fuente2);
     font-size: 15px;
@@ -58,7 +88,11 @@ p {
     margin-bottom: 20px;
 }
 
-/* Contenedor central estandarizado */
+/* ==========================================================================
+   CONTAINER - Clase utilitaria de layout. max-width: 70% con margin: 0 auto
+   centra el contenido horizontalmente y limita su ancho para mejorar la
+   legibilidad en pantallas anchas. Se usa dentro de cada seccion.
+   ========================================================================== */
 .container {
     max-width: 70%;
     margin: 0 auto;
@@ -68,28 +102,32 @@ p {
    CABECERAS (HEADERS)
    ========================================================================== */
 
-/* Header 1 - Barra superior */
+/* Header 1 - Barra superior informativa con contacto y redes sociales */
 #header1 {
     background-color: var(--color1);
     color: var(--color5);
     font-size: 15px;
 }
 
+/* Los enlaces heredan color del padre; se sobreescribe aqui a blanco */
 #header1 a {
     color: var(--color4);
     text-decoration: none;
-    transition: color 0.5s;
+    transition: color 0.5s;   /* Transicion suave al pasar el cursor */
 }
 
 #header1 a:hover {
     color: var(--color3);
 }
 
+/* Los iconos de Font Awesome usan el color primario de la marca */
 #header1 i {
     color: var(--color3);
 }
 
-/* Header 2 - Navegación sticky */
+/* Header 2 - Navegacion principal fijada al tope con position: sticky.
+   z-index: 1000 asegura que quede por encima de cualquier otro elemento
+   al hacer scroll. border-bottom separa visualmente el nav del contenido. */
 #header2 {
     background-color: var(--color7);
     position: sticky;
@@ -111,11 +149,13 @@ p {
     color: var(--color3);
 }
 
+/* Clase .active marca el enlace de la pagina actual con el color de marca */
 #header2 a.active {
     color: var(--color3);
 }
 
-/* Flexbox para cabeceras */
+/* Flexbox para distribuir elementos del header: logo a la izquierda,
+   nav a la derecha. justify-content: space-between los separa al maximo. */
 .header-flexbox {
     display: flex;
     justify-content: space-between;
@@ -123,27 +163,93 @@ p {
     padding: 15px 0;
 }
 
+/* Estos tres selectores comparten las mismas propiedades flex:
+   display flex + align-items center + gap para espaciar items internos */
 .header-left, .social-links, .menuop {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
+/* Ancho fijo del logo para que no se deforme ni crezca con el flex */
 .nav-logo {
     width: 150px;
     height: auto;
+}
+
+/* Boton hamburguesa - oculto en desktop, visible solo en movil y tableta */
+.nav-menu-toggle {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color4);
+    display: none;
+}
+
+/* Bloque de contacto dentro del panel lateral del menu */
+.menuop-contacto {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color6);
+    margin-top: 10px;
+    width: 100%;
+}
+
+.menuop-contacto a,
+.menuop-contacto span {
+    font-size: 13px;
+    color: var(--color5);
+    font-family: var(--fuente2);
+    border-bottom: none;
+    padding: 0;
+    width: auto;
+}
+
+.menuop-contacto a:hover {
+    color: var(--color3);
+}
+
+.menuop-contacto i {
+    color: var(--color3);
+    margin-right: 6px;
+}
+
+/* Iconos de redes sociales dentro del panel lateral del menu */
+.menuop-redes {
+    display: none;
+    flex-direction: row;
+    gap: 16px;
+    padding-top: 12px;
+    width: 100%;
+}
+
+.menuop-redes a {
+    font-size: 1.2rem;
+    color: var(--color5);
+    border-bottom: none;
+    padding: 0;
+    width: auto;
+    transition: color 0.3s;
+}
+
+.menuop-redes a:hover {
+    color: var(--color3);
 }
 
 /* ==========================================================================
    CLASES UTILITARIAS - MULTIMEDIA Y PADDINGS
    ========================================================================== */
 
+/* Hace que la imagen ocupe siempre el 100% de su contenedor */
 .img-fluid {
     width: 100%;
     height: auto;
     display: block;
 }
 
+/* aspect-ratio 16/9 mantiene proporcion de video sin importar el ancho.
+   object-fit: cover recorta el video para que llene el area sin distorsion. */
 .video-fluid {
     width: 100%;
     height: auto;
@@ -151,17 +257,19 @@ p {
     object-fit: cover;
 }
 
-/* Clases de padding utilitarias */
+/* Padding minimo para barras delgadas como el header superior */
 .padding-xs {
     padding-top: 11px;
     padding-bottom: 11px;
 }
 
+/* Padding generoso para secciones con fondo blanco */
 .padding-xl {
     padding-top: 120px;
     padding-bottom: 90px;
 }
 
+/* Padding para secciones oscuras (negro azulado) con texto gris claro */
 .padding-xl-negrozul {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -169,6 +277,7 @@ p {
     color: var(--color5);
 }
 
+/* Padding para secciones blancas secundarias con menos espacio inferior */
 .padding-xl-secundario-blanco {
     padding-top: 120px;
     padding-bottom: 40px;
@@ -176,9 +285,12 @@ p {
 }
 
 /* ==========================================================================
-   ESTRUCTURA DE FILAS Y COLUMNAS (SISTEMA FLEXBOX)
+   SISTEMA DE FILAS Y COLUMNAS CON FLEXBOX
+   .row crea el contenedor horizontal. Los margenes negativos compensan el
+   padding interno de cada .col, alineando el contenido con el container.
+   .col crece igual (flex-grow: 1) para distribuir el espacio de forma
+   equitativa entre todas las columnas hijas.
    ========================================================================== */
-
 .row {
     display: flex;
     flex-direction: row;
@@ -186,6 +298,7 @@ p {
     margin-right: -15px;
 }
 
+/* flex-basis: 0 + flex-grow: 1 = columnas de igual ancho automaticamente */
 .col {
     flex-basis: 0;
     flex-grow: 1;
@@ -197,13 +310,13 @@ p {
    INDEX - SECCIONES PRINCIPALES
    ========================================================================== */
 
-/* Banner principal hero */
+/* Banner ocupa el 100% del viewport sin scroll horizontal */
 #banner {
     width: 100%;
     overflow: hidden;
 }
 
-/* Quienes somos */
+/* Seccion Quienes Somos - fondo blanco con texto oscuro */
 #about {
     background-color: var(--color4);
     color: var(--color7);
@@ -213,7 +326,7 @@ p {
     color: var(--color2);
 }
 
-/* Modelos TOP / Servicios */
+/* Seccion Lo mas vendido - fondo oscuro, h2 en blanco */
 #services {
     background-color: var(--color7);
 }
@@ -222,7 +335,7 @@ p {
     color: var(--color4);
 }
 
-/* Vision (pagina nosotros) */
+/* Seccion Vision (pagina nosotros) */
 #vision {
     background-color: var(--color4);
     color: var(--color5);
@@ -232,7 +345,7 @@ p {
     color: var(--color1);
 }
 
-/* Calidad */
+/* Seccion Calidad - fondo oscuro, texto centrado y gris claro en parrafos */
 #calidad {
     background-color: var(--color7);
     color: var(--color4);
@@ -243,7 +356,7 @@ p {
     color: var(--color5);
 }
 
-/* Multimedia / Videos */
+/* Seccion Multimedia - fondo oscuro, titulo en blanco */
 #multimedia {
     background-color: var(--color7);
 }
@@ -253,9 +366,10 @@ p {
 }
 
 /* ==========================================================================
-   INDEX - COMPONENTES: TARJETAS DE PRODUCTOS
+   COMPONENTE: TARJETAS DE PRODUCTOS
+   transition en transform y box-shadow permite el efecto hover suave.
+   El valor translateY(-4px) levanta la tarjeta visualmente al pasar el cursor.
    ========================================================================== */
-
 .card-producto {
     background-color: var(--color4);
     padding: 25px;
@@ -269,6 +383,7 @@ p {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
+/* La imagen se reduce al 97% al pasar el cursor, efecto de "presion" */
 .card-producto img {
     width: 100%;
     border-radius: 12px;
@@ -290,7 +405,13 @@ p {
     color: var(--color2);
 }
 
-/* Boton general de servicios */
+/* ==========================================================================
+   COMPONENTE: BOTON CTA (llamado a la accion)
+   display: inline-block permite aplicar padding y margin a un enlace <a>.
+   text-transform: uppercase da consistencia visual con los titulos.
+   border del mismo color que el fondo da un borde invisible que evita saltos
+   de layout al cambiar el fondo en hover.
+   ========================================================================== */
 .services-button {
     display: inline-block;
     background-color: var(--color3);
@@ -312,9 +433,11 @@ p {
 }
 
 /* ==========================================================================
-   INDEX - COMPONENTES: GALERIA
+   COMPONENTE: GALERIA
+   flex-wrap: wrap permite que los items bajen de linea si no caben.
+   calc(25% - 15px) en flex-basis mantiene 4 columnas descontando el gap.
+   overflow: hidden en el item recorta la imagen al hacer zoom con scale.
    ========================================================================== */
-
 .galeria-flex {
     display: flex;
     flex-wrap: wrap;
@@ -329,6 +452,7 @@ p {
     background-color: var(--color6);
 }
 
+/* scale(1.15) agranda la imagen al pasar el cursor, overflow:hidden la recorta */
 .galeria-item img {
     width: 100%;
     transition: transform 1s;
@@ -339,9 +463,11 @@ p {
 }
 
 /* ==========================================================================
-   INDEX - COMPONENTES: TABLA DE TALLAS
+   COMPONENTE: TABLA DE TALLAS
+   border-collapse: collapse une los bordes de celdas adyacentes en uno solo.
+   overflow-x: auto en el contenedor permite scroll horizontal en pantallas
+   pequenas sin romper el layout general de la pagina.
    ========================================================================== */
-
 .tabla-responsiva-contenedor {
     width: 100%;
     overflow-x: auto;
@@ -354,6 +480,7 @@ p {
     text-align: center;
 }
 
+/* caption es el titulo accesible de la tabla, posicionado arriba */
 .tbl-tallas caption {
     font-weight: bold;
     text-align: left;
@@ -362,6 +489,7 @@ p {
     margin-bottom: 15px;
 }
 
+/* Encabezados de columna con fondo del color primario de la marca */
 .tbl-tallas th {
     background-color: var(--color3);
     color: var(--color4);
@@ -374,6 +502,7 @@ p {
     padding: 12px;
 }
 
+/* tfoot con nota aclaratoria en italica, alineada a la derecha */
 .tbl-tallas tfoot td {
     font-size: 0.85rem;
     text-align: right;
@@ -383,9 +512,11 @@ p {
 }
 
 /* ==========================================================================
-   INDEX - COMPONENTES: VIDEOS
+   COMPONENTE: VIDEOS
+   position: relative en el wrapper permite posicionar elementos encima si
+   fuera necesario. aspect-ratio 16/9 en video-fluid garantiza que el video
+   mantenga sus proporciones correctas en cualquier ancho de pantalla.
    ========================================================================== */
-
 .video-wrapper {
     width: 100%;
     position: relative;
@@ -400,9 +531,11 @@ p {
 }
 
 /* ==========================================================================
-   INDEX - COMPONENTES: FORMULARIO DE CONTACTO
+   COMPONENTE: FORMULARIO DE CONTACTO
+   font: inherit hace que los inputs hereden la tipografia del body en lugar
+   de usar la fuente del sistema que aplican los navegadores por defecto.
+   outline en :focus reemplaza el contorno del navegador por el color de marca.
    ========================================================================== */
-
 .form-control {
     display: block;
     width: 100%;
@@ -413,6 +546,7 @@ p {
     background-color: var(--color4);
 }
 
+/* Resalta el campo activo con el color primario al hacer clic */
 .form-control:focus {
     outline: 2px solid var(--color3);
 }
@@ -422,6 +556,8 @@ p {
     text-decoration: none;
 }
 
+/* Boton de envio del formulario - mismos valores que .services-button
+   para mantener consistencia visual entre botones del sitio */
 .form-submit {
     background-color: var(--color3);
     color: var(--color4);
@@ -442,19 +578,22 @@ p {
 }
 
 /* ==========================================================================
-   INDEX - FOOTER
+   FOOTER
+   background-color y color sobreescriben los estilos del body para crear
+   contraste. font-size reducido en .copy da jerarquia visual al pie de pagina.
    ========================================================================== */
-
 #footer {
     background-color: var(--color6);
     color: var(--color5);
 }
 
+/* Texto de copyright centrado con fuente reducida */
 .copy {
     text-align: center;
     font-size: 14px;
 }
 
+/* Flexbox para alinear copyright y redes sociales en una sola fila */
 .footer-flexbox {
     display: flex;
     flex-direction: row;
@@ -472,9 +611,11 @@ p {
 }
 
 /* ==========================================================================
-   BOTON SCROLL UP (TODAS LAS PAGINAS)
+   BOTON SCROLL UP
+   position: fixed lo fija en pantalla sin importar el scroll.
+   bottom y right ubican el boton en la esquina inferior derecha.
+   line-height igual al height centra el icono verticalmente dentro del boton.
    ========================================================================== */
-
 .scroll-up {
     position: fixed;
     bottom: 30px;
@@ -490,8 +631,11 @@ p {
 
 /* ==========================================================================
    PAGINAS INTERNAS - BANNER DE TITULO (page-title)
+   El pseudoelemento ::before crea una capa oscura semitransparente encima
+   de la imagen de fondo para mejorar la legibilidad del texto blanco.
+   position: absolute + inset: 0 estira esa capa sobre todo el banner.
+   El contenido usa position: relative + z-index: 1 para quedar por encima.
    ========================================================================== */
-
 .page-title {
     height: 300px;
     display: flex;
@@ -505,6 +649,7 @@ p {
     background-image: url("../img/page_title.jpg");
 }
 
+/* Capa de gradiente oscuro sobre la imagen para contraste del texto */
 .page-title::before {
     content: "";
     position: absolute;
@@ -512,6 +657,7 @@ p {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.35));
 }
 
+/* z-index: 1 eleva el contenido por encima del ::before */
 .page-title-content {
     position: relative;
     z-index: 1;
@@ -529,12 +675,15 @@ p {
 
 /* ==========================================================================
    REGISTRO - FORMULARIO DE AUTENTICACION (registro.html)
+   .auth-card es un contenedor centrado con sombra y bordes redondeados.
+   max-width fijo en px en lugar de porcentaje mantiene el formulario legible
+   independientemente del ancho de pantalla.
    ========================================================================== */
-
 .auth-page {
     background-color: var(--color4);
 }
 
+/* Tarjeta del formulario: centrada con margin auto, sombra suave y borde */
 .auth-card {
     max-width: 450px;
     margin: 0 auto;
@@ -545,7 +694,8 @@ p {
     border: 1px solid rgba(33, 33, 41, 0.08);
 }
 
-.auth-header h2 {
+/* Mayor especificidad para sobreescribir el section h2 global de 36px */
+.auth-card .auth-header h2 {
     margin-bottom: 10px;
     color: var(--color1);
     font-size: 2rem;
@@ -565,6 +715,7 @@ p {
     margin-bottom: 18px;
 }
 
+/* Labels en negrita para guiar visualmente al usuario en cada campo */
 .auth-card .input-group label {
     display: block;
     margin-bottom: 8px;
@@ -573,14 +724,18 @@ p {
     font-size: 0.95rem;
 }
 
+/* Contenedor relativo para posicionar el icono de ojo dentro del input */
 .input-with-icon {
     position: relative;
 }
 
+/* Espacio a la derecha del input para que el texto no tape el boton ojo */
 .input-with-icon input {
     padding-right: 44px;
 }
 
+/* Boton ojo posicionado absolutamente dentro del input con transform para
+   centrado vertical exacto */
 .show-password-toggle {
     position: absolute;
     top: 50%;
@@ -593,7 +748,7 @@ p {
     font-size: 1rem;
 }
 
-/* Botones de accion del formulario de registro */
+/* Contenedor de botones en columna usando flexbox con gap entre ellos */
 .auth-actions {
     display: flex;
     flex-direction: column;
@@ -601,6 +756,7 @@ p {
     margin-top: 20px;
 }
 
+/* Boton base: ancho completo, padding generoso y transicion en hover */
 .auth-button {
     width: 100%;
     padding: 14px 18px;
@@ -611,16 +767,19 @@ p {
     transition: transform 0.25s ease;
 }
 
+/* Boton primario - color de marca */
 .auth-primary {
     background-color: var(--color3);
     color: var(--color4);
 }
 
+/* Boton secundario - fondo oscuro para diferenciarlo del primario */
 .auth-secondary {
     background-color: var(--color6);
     color: var(--color4);
 }
 
+/* Sube ligeramente el boton al pasar el cursor */
 .auth-button:hover {
     transform: translateY(-1px);
 }
@@ -629,6 +788,7 @@ p {
     margin-right: 8px;
 }
 
+/* Pie del formulario: enlace para ir a login si ya tiene cuenta */
 .auth-footer {
     margin-top: 20px;
     text-align: center;
@@ -648,8 +808,10 @@ p {
 
 /* ==========================================================================
    CATALOGO - FILTROS DE CATEGORIA (catalogo.html)
+   Los .cat-tag son botones de filtro visuales. Al activarse o hacer hover
+   cambian fondo, borde y color de texto usando la variable de color primario.
+   transition en tres propiedades simultaneas da una animacion suave.
    ========================================================================== */
-
 .cat-filtros-flex {
     display: flex;
     flex-wrap: wrap;
@@ -657,6 +819,7 @@ p {
     justify-content: center;
 }
 
+/* Tag inactivo: borde gris, texto gris */
 .cat-tag {
     display: inline-block;
     padding: 8px 22px;
@@ -670,6 +833,7 @@ p {
     transition: background-color 0.5s, color 0.5s, border-color 0.5s;
 }
 
+/* Tag activo o con hover: fondo rojo, borde rojo, texto blanco */
 .cat-tag:hover,
 .cat-tag-activo {
     background-color: var(--color3);
@@ -679,8 +843,9 @@ p {
 
 /* ==========================================================================
    CATALOGO - GRID DE PRODUCTOS (catalogo.html)
+   calc(33.333% - 30px) en flex-basis genera 3 columnas descontando el gap.
+   min-width evita que las tarjetas se vuelvan demasiado angostas.
    ========================================================================== */
-
 .cat-grid {
     display: flex;
     flex-wrap: wrap;
@@ -700,6 +865,7 @@ p {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
+/* overflow: hidden en el wrapper recorta el zoom de la imagen al hacer hover */
 .cat-img-wrapper {
     overflow: hidden;
 }
@@ -730,8 +896,9 @@ p {
 
 /* ==========================================================================
    CATALOGO - SECCION CTA FINAL (catalogo.html)
+   justify-content: space-between separa el texto del boton en extremos
+   opuestos del contenedor flexible.
    ========================================================================== */
-
 #cat-cta h2 {
     color: var(--color4);
     text-align: left;
@@ -752,8 +919,9 @@ p {
 
 /* ==========================================================================
    DROPS - GRID DE ENTRADAS (drops.html)
+   Misma logica de grid que cat-grid: 3 columnas flexibles con gap y wrap.
+   .drop-fecha usa el color primario para destacar la fecha de lanzamiento.
    ========================================================================== */
-
 .drops-flex {
     display: flex;
     flex-wrap: wrap;
@@ -790,6 +958,7 @@ p {
     padding: 20px 25px;
 }
 
+/* Fecha del drop en color primario para destacarla del resto del contenido */
 .drop-fecha {
     font-size: 13px;
     font-family: var(--fuente2);
@@ -813,13 +982,15 @@ p {
 
 /* ==========================================================================
    CONTACTO - DATOS DE CONTACTO (contacto.html)
+   .contacto-icono usa flexbox para centrar el icono dentro de un cuadrado
+   fijo de 50x50px. flex-shrink: 0 evita que se comprima al lado del texto.
    ========================================================================== */
-
 .contacto-info {
     background-color: var(--color7);
     padding: 40px 30px;
 }
 
+/* Cada item de contacto alinea icono y texto en fila con gap entre ellos */
 .contacto-item {
     display: flex;
     align-items: center;
@@ -827,6 +998,7 @@ p {
     margin-bottom: 35px;
 }
 
+/* Icono cuadrado centrado con flexbox, no se encoge con flex-shrink: 0 */
 .contacto-icono {
     background-color: var(--color3);
     color: var(--color4);
@@ -853,8 +1025,11 @@ p {
 
 /* ==========================================================================
    CONTACTO - TITULOS DEL FORMULARIO (contacto.html)
+   Dos variantes: oscuro para secciones claras, claro para secciones oscuras.
+   Comparten las mismas propiedades de estilo, solo cambia el color.
    ========================================================================== */
 
+/* Titulo oscuro para secciones de fondo blanco */
 .contacto-titulo {
     text-align: left;
     margin-bottom: 25px;
@@ -864,6 +1039,7 @@ p {
     font-weight: 700;
 }
 
+/* Titulo claro para secciones de fondo oscuro */
 .contacto-titulo-claro {
     text-align: left;
     margin-bottom: 25px;
@@ -875,11 +1051,271 @@ p {
 
 /* ==========================================================================
    CONTACTO - MAPA IFRAME (contacto.html)
+   El wrapper usa aspect-ratio 16/9 con position relative para que el iframe
+   ocupe siempre el 100% del contenedor sin importar el ancho de pantalla.
+   El iframe usa position absolute + inset 0 para llenarlo completamente.
    ========================================================================== */
+.mapa-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+}
 
 .contacto-iframe {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 350px;
+    height: 100%;
     border: 0;
     display: block;
+}
+
+
+/* -----------------------------------------------------------
+   DISEÑO RESPONSIVE PARA PANTALLA GRANDE (hasta 1200px)
+   ----------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+
+/* -----------------------------------------------------------
+   DISEÑO RESPONSIVE PARA PANTALLA MEDIANA (hasta 992px)
+   ----------------------------------------------------------- */
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 85%;
+    }
+
+    /* Las tarjetas de productos pasan a columna */
+    #services .row {
+        flex-direction: column;
+    }
+
+    /* Los videos pasan a columna */
+    #multimedia .row {
+        flex-direction: column;
+    }
+
+    /* Contacto: datos e info pasan a columna */
+    #contacto-principal .row {
+        flex-direction: column;
+    }
+
+    /* Mapa y horarios pasan a columna */
+    #contacto-mapa .row {
+        flex-direction: column;
+    }
+
+    /* Catalogo: grid de 2 columnas en mediana */
+    .cat-card {
+        flex: 1 1 calc(50% - 30px);
+    }
+
+    /* Drops: grid de 2 columnas en mediana */
+    .drop-card {
+        flex: 1 1 calc(50% - 30px);
+    }
+}
+
+
+/* -----------------------------------------------------------
+   DISEÑO RESPONSIVE PARA TABLETA (hasta 768px)
+   ----------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+
+    /* Reducir paddings grandes para que no haya espacios enormes */
+    .padding-xl {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .padding-xl-negrozul {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .padding-xl-secundario-blanco {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+
+    /* Titulos h2 mas pequeños para que no desborden */
+    section h2 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+    /* Mostrar el boton hamburguesa en tableta */
+    .nav-menu-toggle {
+        display: block;
+    }
+
+    /* El menu pasa a barra lateral derecha y se oculta inicialmente */
+    .menuop {
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 260px;
+        height: 100vh;
+        background-color: var(--color7);
+        padding: 2rem 1.5rem;
+        z-index: 2000;
+        gap: 0;
+
+        /* Ocultar el menu por defecto */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Clase .active activa el menu lateral (se controla desde JavaScript) */
+    .menuop.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    /* Cada enlace del menu ocupa todo el ancho con separador */
+    .menuop a {
+        width: 100%;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--color6);
+        font-size: 0.95rem;
+    }
+
+    /* Mostrar bloque de contacto y redes dentro del panel lateral */
+    .menuop-contacto {
+        display: flex;
+    }
+
+    .menuop-redes {
+        display: flex;
+    }
+
+    /* Galeria en 2 columnas en tableta */
+    .galeria-item {
+        flex: 1 1 calc(50% - 15px);
+    }
+
+    /* Cards de catalogo y drops en columna */
+    .cat-card {
+        flex: 1 1 100%;
+    }
+
+    .drop-card {
+        flex: 1 1 100%;
+    }
+
+    /* Footer en columna */
+    .footer-flexbox {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* CTA del catalogo en columna */
+    .cat-cta-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Auth card ocupa mas ancho en tableta */
+    .auth-card {
+        max-width: 90%;
+    }
+
+    /* Formulario de contacto: nombre y correo en columna */
+    #contacto-principal .row .row {
+        flex-direction: column;
+    }
+}
+
+
+/* -----------------------------------------------------------
+   DISEÑO RESPONSIVE PARA MOVIL (hasta 576px)
+   ----------------------------------------------------------- */
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 95%;
+    }
+
+    /* Paddings minimos en movil */
+    .padding-xl {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .padding-xl-negrozul {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .padding-xl-secundario-blanco {
+        padding-top: 45px;
+        padding-bottom: 20px;
+    }
+
+    /* H2 aun mas compacto en movil */
+    section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    /* Panel lateral mas angosto en movil pequeño */
+    .menuop {
+        width: 220px;
+    }
+
+    .menuop a {
+        font-size: 0.85rem;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--color6);
+    }
+
+    /* Header superior ocultar en movil para ahorrar espacio */
+    #header1 {
+        display: none;
+    }
+
+    /* Galeria en columna unica en movil */
+    .galeria-item {
+        flex: 1 1 100%;
+    }
+
+    /* Scroll-up mas pequeño en movil */
+    .scroll-up {
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Auth card full width en movil */
+    .auth-card {
+        padding: 25px;
+        max-width: 100%;
+    }
+
+    /* Tabla de tallas: texto mas pequeño */
+    .tbl-tallas th,
+    .tbl-tallas td {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
 }

@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - ChasKicks</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">    
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
 
     <header id="header1">
         <div class="header-flexbox container padding-xs">
             <div class="header-left">
                 <a href="tel:+51978376193"><i class="fa-solid fa-phone"></i> +51 978 376 193</a>
-                <span class="date-text"><i class="fa-regular fa-clock"></i> Lun - Sab: 9:00 AM - 8:00 PM</span>
+                <span class="date-text"><i class="fa-regular fa-clock"></i> Lun - Sáb: 9:00 AM - 8:00 PM</span>
             </div>
             <div class="social-links">
                 <a target="_blank" href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
@@ -39,6 +35,12 @@
                     <img class="img-fluid" src="../img/logo_ck.png" alt="ChasKicks Logo">
                 </a>
             </div>
+
+            <!-- Boton hamburguesa (visible solo en movil y tableta) -->
+            <div class="nav-menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
             <nav class="menuop">
                 <a href="../../index.html">INICIO</a>
                 <a href="nosotros.html">NOSOTROS</a>
@@ -47,6 +49,20 @@
                 <a href="contacto.html" class="active">CONTACTO</a>
                 <a href="../../index.html#contact-form"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <a href="registro.html"><i class="fa-regular fa-user"></i>&nbsp;Registrate aqui</a>
+
+                <!-- Datos de contacto en el panel lateral -->
+                <div class="menuop-contacto">
+                    <a href="tel:+51978376193"><i class="fa-solid fa-phone"></i> +51 978 376 193</a>
+                    <span><i class="fa-regular fa-clock"></i> Lun - Sáb: 9:00 AM - 8:00 PM</span>
+                </div>
+
+                <!-- Redes sociales en el panel lateral -->
+                <div class="menuop-redes">
+                    <a target="_blank" href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a target="_blank" href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </nav>
         </div>
     </header>
@@ -84,7 +100,7 @@
                             </div>
                             <div>
                                 <h3>Telefono</h3>
-                                <p>+51 978 376 193</p>
+                                <p><a href="tel:+51978376193" style="color:var(--color5); text-decoration:none;">+51 978 376 193</a></p>
                             </div>
                         </div>
 
@@ -104,7 +120,7 @@
                             </div>
                             <div>
                                 <h3>WhatsApp</h3>
-                                <p>+51 978 376 193</p>
+                                <p><a href="tel:+51978376193" style="color:var(--color5); text-decoration:none;">+51 978 376 193</a></p>
                             </div>
                         </div>
 
@@ -133,8 +149,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" id="acepto" required>
-                                <label for="acepto">He leido y acepto los <a class="form-link" href="#">terminos y
-                                        condiciones</a> de privacidad.</label>
+                                <label for="acepto">He leido y acepto los <a class="form-link" href="#">terminos y condiciones</a> de privacidad.</label>
                             </div>
                             <div>
                                 <button class="form-submit" type="submit">Enviar Mensaje</button>
@@ -151,12 +166,17 @@
             <div class="container">
                 <div class="row">
 
-                    <!-- Mapa -->
+                    <!-- Mapa envuelto en wrapper responsivo -->
                     <div class="col">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487.7084328111781!2d-77.044220490671!3d-12.066374733863745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9003936cabb%3A0x58faef5f9c0a8064!2sRESIDENCIAL%20CAMPO%20MARTE!5e0!3m2!1ses-419!2spe!4v1779410794823!5m2!1ses-419!2spe"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="mapa-wrapper">
+                            <iframe
+                                class="contacto-iframe"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487.7084328111781!2d-77.044220490671!3d-12.066374733863745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9003936cabb%3A0x58faef5f9c0a8064!2sRESIDENCIAL%20CAMPO%20MARTE!5e0!3m2!1ses-419!2spe!4v1779410794823!5m2!1ses-419!2spe"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
                     </div>
 
                     <!-- Horarios -->
@@ -170,34 +190,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Lunes</td>
-                                    <td>9:00 AM - 8:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Martes</td>
-                                    <td>9:00 AM - 8:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Miercoles</td>
-                                    <td>9:00 AM - 8:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Jueves</td>
-                                    <td>9:00 AM - 8:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Viernes</td>
-                                    <td>9:00 AM - 8:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Sabado</td>
-                                    <td>9:00 AM - 8:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Domingo</td>
-                                    <td>Cerrado</td>
-                                </tr>
+                                <tr><td>Lunes</td><td>9:00 AM - 8:00 PM</td></tr>
+                                <tr><td>Martes</td><td>9:00 AM - 8:00 PM</td></tr>
+                                <tr><td>Miercoles</td><td>9:00 AM - 8:00 PM</td></tr>
+                                <tr><td>Jueves</td><td>9:00 AM - 8:00 PM</td></tr>
+                                <tr><td>Viernes</td><td>9:00 AM - 8:00 PM</td></tr>
+                                <tr><td>Sabado</td><td>9:00 AM - 8:00 PM</td></tr>
+                                <tr><td>Domingo</td><td>Cerrado</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -223,10 +222,13 @@
         </div>
     </footer>
 
+    <!-- Boton flotante para volver al inicio de la pagina -->
     <a class="scroll-up" href="#">
         <i class="fa-solid fa-angle-up"></i>
     </a>
 
-</body>
+    <!-- Script para el menu hamburguesa -->
+    <script src="../../assets/js/scripts.js"></script>
 
+</body>
 </html>

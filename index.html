@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +11,19 @@
     <!-- Enlazar el HTML con la hoja de estilos externa CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- Enlazar el HTML con el favicon -->    
+    <!-- Enlazar el HTML con el favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Enlazar HTML con fuentes externas de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Enlazar HTML con la libreria de iconos de Font Awesome -->    
+
+    <!-- Enlazar HTML con la libreria de iconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
 </head>
+
 <body>
 
     <!-- Barra superior con telefono, horario y redes sociales -->
@@ -40,15 +42,23 @@
         </div>
     </header>
 
-    <!-- Navegacion principal con logo y menu de paginas -->
+    <!-- Navegacion principal con logo, hamburguesa y menu de paginas -->
     <header id="header2">
         <div class="header-flexbox container">
+
+            <!-- Logo enlazado al inicio -->
             <div class="nav-logo">
                 <a href="index.html">
                     <img class="img-fluid" src="assets/img/logo_ck.png" alt="ChasKicks Logo">
                 </a>
             </div>
 
+            <!-- Boton hamburguesa (visible solo en movil y tableta) -->
+            <div class="nav-menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Menu de navegacion -->
             <nav class="menuop">
                 <a href="index.html" class="active">INICIO</a>
                 <a href="assets/pages/nosotros.html">NOSOTROS</a>
@@ -57,7 +67,22 @@
                 <a href="assets/pages/contacto.html">CONTACTO</a>
                 <a href="#contact-form"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <a href="assets/pages/registro.html"><i class="fa-regular fa-user"></i>&nbsp;Registrate aquí</a>
+
+                <!-- Datos de contacto en el panel lateral -->
+                <div class="menuop-contacto">
+                    <a href="tel:+51978376193"><i class="fa-solid fa-phone"></i> +51 978 376 193</a>
+                    <span><i class="fa-regular fa-clock"></i> Lun - Sáb: 9:00 AM - 8:00 PM</span>
+                </div>
+
+                <!-- Redes sociales en el panel lateral -->
+                <div class="menuop-redes">
+                    <a target="_blank" href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a target="_blank" href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </nav>
+
         </div>
     </header>
 
@@ -153,32 +178,16 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>38</td>
-                                <td>5.5</td>
-                                <td>7</td>
-                                <td>5</td>
-                                <td>24</td>
+                                <td>38</td><td>5.5</td><td>7</td><td>5</td><td>24</td>
                             </tr>
                             <tr>
-                                <td>40</td>
-                                <td>7</td>
-                                <td>8.5</td>
-                                <td>6.5</td>
-                                <td>25</td>
+                                <td>40</td><td>7</td><td>8.5</td><td>6.5</td><td>25</td>
                             </tr>
                             <tr>
-                                <td>42</td>
-                                <td>8.5</td>
-                                <td>10</td>
-                                <td>8</td>
-                                <td>26.5</td>
+                                <td>42</td><td>8.5</td><td>10</td><td>8</td><td>26.5</td>
                             </tr>
                             <tr>
-                                <td>44</td>
-                                <td>10</td>
-                                <td>11.5</td>
-                                <td>9.5</td>
-                                <td>28</td>
+                                <td>44</td><td>10</td><td>11.5</td><td>9.5</td><td>28</td>
                             </tr>
                         </tbody>
                         <tfoot>
@@ -205,7 +214,7 @@
                             </video>
                         </div>
                     </div>
-                    <!-- Video de YouTube -->
+                    <!-- Video embebido de YouTube -->
                     <div class="col">
                         <div class="video-wrapper">
                             <iframe class="video-fluid" src="https://www.youtube.com/embed/AMyN_wqZDM4" title="YouTube video player" style="border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -264,7 +273,10 @@
     <!-- Boton flotante para volver al inicio de la pagina -->
     <a class="scroll-up" href="#">
         <i class="fa-solid fa-angle-up"></i>
-    </a>    
+    </a>
+
+    <!-- Script para el menu hamburguesa -->
+    <script src="assets/js/scripts.js"></script>
 
 </body>
 </html>
