@@ -316,6 +316,60 @@ p {
     overflow: hidden;
 }
 
+/* Hero section con titulo y texto descriptivo sobre imagen de fondo */
+#hero {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+#hero img.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 0;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: var(--color5);
+    font-family: var(--fuente2);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 500px;
+    text-align: left;
+}
+
 /* Seccion Quienes Somos - fondo blanco con texto oscuro */
 #about {
     background-color: var(--color4);
@@ -627,6 +681,10 @@ p {
     background-color: var(--color3);
     color: var(--color4);
     border: 1px solid var(--color4);
+    /* Oculto por defecto, el JS lo muestra al hacer scroll */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 /* ==========================================================================
@@ -1072,8 +1130,9 @@ p {
 }
 
 
+
 /* -----------------------------------------------------------
-   DISEÑO RESPONSIVE PARA PANTALLA GRANDE (hasta 1200px)
+   DISEÑO RESPONSIVE PARA PANTALLA LAPTOP (hasta 1200px)
    ----------------------------------------------------------- */
 
 @media (max-width: 1200px) {
@@ -1084,7 +1143,7 @@ p {
 
 
 /* -----------------------------------------------------------
-   DISEÑO RESPONSIVE PARA PANTALLA MEDIANA (hasta 992px)
+   DISEÑO RESPONSIVE PARA TABLET (hasta 992px)
    ----------------------------------------------------------- */
 
 @media (max-width: 992px) {
@@ -1112,12 +1171,12 @@ p {
         flex-direction: column;
     }
 
-    /* Catalogo: grid de 2 columnas en mediana */
+    /* Catalogo: grid de 2 columnas en tablet */
     .cat-card {
         flex: 1 1 calc(50% - 30px);
     }
 
-    /* Drops: grid de 2 columnas en mediana */
+    /* Drops: grid de 2 columnas en tablet */
     .drop-card {
         flex: 1 1 calc(50% - 30px);
     }
@@ -1125,7 +1184,7 @@ p {
 
 
 /* -----------------------------------------------------------
-   DISEÑO RESPONSIVE PARA TABLETA (hasta 768px)
+   DISEÑO RESPONSIVE PARA MOVIL REGULAR (hasta 768px)
    ----------------------------------------------------------- */
 
 @media (max-width: 768px) {
@@ -1155,7 +1214,7 @@ p {
         margin-bottom: 25px;
     }
 
-    /* Mostrar el boton hamburguesa en tableta */
+    /* Mostrar el boton hamburguesa */
     .nav-menu-toggle {
         display: block;
     }
@@ -1206,7 +1265,7 @@ p {
         display: flex;
     }
 
-    /* Galeria en 2 columnas en tableta */
+    /* Galeria en 2 columnas */
     .galeria-item {
         flex: 1 1 calc(50% - 15px);
     }
@@ -1233,7 +1292,7 @@ p {
         text-align: center;
     }
 
-    /* Auth card ocupa mas ancho en tableta */
+    /* Auth card ocupa mas ancho */
     .auth-card {
         max-width: 90%;
     }
@@ -1242,19 +1301,28 @@ p {
     #contacto-principal .row .row {
         flex-direction: column;
     }
+
+    /* Hero section en movil */
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
 }
 
 
 /* -----------------------------------------------------------
-   DISEÑO RESPONSIVE PARA MOVIL (hasta 576px)
+   DISEÑO RESPONSIVE PARA MOVIL PEQUEÑO (hasta 480px)
    ----------------------------------------------------------- */
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .container {
         max-width: 95%;
     }
 
-    /* Paddings minimos en movil */
+    /* Paddings minimos en movil pequeño */
     .padding-xl {
         padding-top: 45px;
         padding-bottom: 45px;
@@ -1270,15 +1338,15 @@ p {
         padding-bottom: 20px;
     }
 
-    /* H2 aun mas compacto en movil */
+    /* H2 mas compacto en movil pequeño */
     section h2 {
-        font-size: 22px;
-        margin-bottom: 20px;
+        font-size: 20px;
+        margin-bottom: 18px;
     }
 
     /* Panel lateral mas angosto en movil pequeño */
     .menuop {
-        width: 220px;
+        width: 200px;
     }
 
     .menuop a {
@@ -1287,17 +1355,17 @@ p {
         border-bottom: 1px solid var(--color6);
     }
 
-    /* Header superior ocultar en movil para ahorrar espacio */
+    /* Header superior ocultar en movil pequeño */
     #header1 {
         display: none;
     }
 
-    /* Galeria en columna unica en movil */
+    /* Galeria en columna unica en movil pequeño */
     .galeria-item {
         flex: 1 1 100%;
     }
 
-    /* Scroll-up mas pequeño en movil */
+    /* Scroll-up mas pequeño en movil pequeño */
     .scroll-up {
         width: 38px;
         height: 38px;
@@ -1306,16 +1374,30 @@ p {
         right: 20px;
     }
 
-    /* Auth card full width en movil */
+    /* Auth card full width en movil pequeño */
     .auth-card {
-        padding: 25px;
+        padding: 20px;
         max-width: 100%;
     }
 
     /* Tabla de tallas: texto mas pequeño */
     .tbl-tallas th,
     .tbl-tallas td {
-        padding: 8px 6px;
+        padding: 6px 4px;
+        font-size: 12px;
+    }
+
+    /* Hero section en movil pequeño */
+    .hero-content h2 {
+        font-size: 22px;
+    }
+
+    .hero-content p {
         font-size: 13px;
+    }
+
+    .hero-content .services-button {
+        padding: 6px 14px;
+        font-size: 12px;
     }
 }
